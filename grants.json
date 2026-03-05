@@ -1,98 +1,765 @@
 [
   {
     "id": 1,
-    "nom": "Subventions égalité femmes-hommes",
-    "organisme": "Ministère chargé de l'Égalité",
+    "nom": "Women's Fund",
+    "organisme": "Global Fund for Women",
     "montant_min": 5000,
     "montant_max": 50000,
-    "description": "Soutien aux associations œuvrant pour l'égalité entre les femmes et les hommes en France.",
-    "criteres": ["association loi 1901", "activité en France", "thématique égalité femmes-hommes"],
-    "zones_geographiques": ["France"],
-    "deadline": "Avril 2026",
-    "url": "https://www.egalite-femmes-hommes.gouv.fr"
+    "description": "Financement pour organisations de femmes travaillant sur les droits et l'égalité des genres",
+    "criteres": [
+      "Organisation dirigée par des femmes",
+      "Travail sur les droits des femmes",
+      "Impact communautaire démontré"
+    ],
+    "zones_geographiques": [
+      "International",
+      "Asie",
+      "Afrique",
+      "Amérique Latine"
+    ],
+    "deadline": "Continu - cycles annuels",
+    "url": "www.globalfundforwomen.org",
+    "langue": "anglais"
   },
   {
     "id": 2,
-    "nom": "Fondation L'Oréal - Femmes et Science",
-    "organisme": "Fondation L'Oréal",
-    "montant_min": 15000,
-    "montant_max": 20000,
-    "description": "Soutien aux femmes scientifiques et aux associations promouvant les femmes dans les sciences et la tech.",
-    "criteres": ["femmes dans la tech", "éducation", "formation", "sciences"],
-    "zones_geographiques": ["France", "International"],
-    "deadline": "Mars 2026",
-    "url": "https://www.fondationloreal.com"
+    "nom": "Mama Cash Core Grants",
+    "organisme": "Mama Cash",
+    "montant_min": 3000,
+    "montant_max": 40000,
+    "description": "Financement pour mouvements féministes audacieux en Afrique, Asie et Amérique Latine",
+    "criteres": [
+      "Approche féministe radicale",
+      "Leadership de femmes marginalisées",
+      "Travail grassroots"
+    ],
+    "zones_geographiques": [
+      "Afrique",
+      "Asie",
+      "Amérique Latine"
+    ],
+    "deadline": "Cycles annuels - janvier, mai, septembre",
+    "url": "www.mamacash.org",
+    "langue": "anglais"
   },
   {
     "id": 3,
-    "nom": "Prix Initiatives Femmes",
-    "organisme": "Fondation RAJA-Danièle Marcovici",
-    "montant_min": 8000,
-    "montant_max": 15000,
-    "description": "Soutien aux associations qui favorisent l'autonomie économique des femmes.",
-    "criteres": ["autonomie économique", "femmes en difficulté", "insertion professionnelle"],
-    "zones_geographiques": ["France"],
-    "deadline": "Juin 2026",
-    "url": "https://www.fondationraja.org"
+    "nom": "Ford Foundation - Gender Justice",
+    "organisme": "Ford Foundation",
+    "montant_min": 10000,
+    "montant_max": 250000,
+    "description": "Financement pour justice de genre, droits reproductifs et égalité économique",
+    "criteres": [
+      "Projet d'impact systémique",
+      "Partenariats stratégiques",
+      "Plaidoyer politique"
+    ],
+    "zones_geographiques": [
+      "International",
+      "Afrique",
+      "Asie",
+      "Europe",
+      "Amérique"
+    ],
+    "deadline": "Continu",
+    "url": "www.fordfoundation.org",
+    "langue": "anglais"
   },
   {
     "id": 4,
-    "nom": "Fonds Minka - Inclusion numérique",
-    "organisme": "Crédit Coopératif",
+    "nom": "Open Society Foundations - Women's Rights",
+    "organisme": "Open Society Foundations",
     "montant_min": 5000,
-    "montant_max": 30000,
-    "description": "Financement de projets d'inclusion numérique pour les publics éloignés du numérique.",
-    "criteres": ["inclusion numérique", "formation", "publics vulnérables", "association loi 1901"],
-    "zones_geographiques": ["France"],
-    "deadline": "Ouvert en continu",
-    "url": "https://www.kredim.org"
+    "montant_max": 200000,
+    "description": "Soutien pour organisations travaillant sur les droits des femmes, égalité et justice",
+    "criteres": [
+      "Vision démocratique",
+      "Approche intersectionnelle",
+      "Engagement communautaire"
+    ],
+    "zones_geographiques": [
+      "International",
+      "Europe",
+      "Afrique",
+      "Asie",
+      "Moyen-Orient"
+    ],
+    "deadline": "Continu - cycles trimestriels",
+    "url": "www.opensocietyfoundations.org",
+    "langue": "anglais"
   },
   {
     "id": 5,
-    "nom": "ONU Femmes - Fonds pour l'égalité",
-    "organisme": "ONU Femmes",
-    "montant_min": 25000,
-    "montant_max": 100000,
-    "description": "Financement de programmes pour l'égalité des genres et l'autonomisation des femmes.",
-    "criteres": ["égalité des genres", "droits des femmes", "empowerment", "impact mesurable"],
-    "zones_geographiques": ["France", "Afrique", "International"],
-    "deadline": "Variable selon appels",
-    "url": "https://www.unwomen.org"
+    "nom": "Astraea Lesbian Foundation for Justice",
+    "organisme": "Astraea Foundation",
+    "montant_min": 2000,
+    "montant_max": 35000,
+    "description": "Financement pour justice LGBTQ+ et droits des femmes lesbiennes et LGBTQ+",
+    "criteres": [
+      "Leadership LGBTQ+",
+      "Lutte contre discriminations",
+      "Mouvements féministes"
+    ],
+    "zones_geographiques": [
+      "International",
+      "Afrique",
+      "Asie",
+      "Amérique Latine",
+      "Caraïbes"
+    ],
+    "deadline": "Deux cycles annuels",
+    "url": "www.astraeafoundation.org",
+    "langue": "anglais"
   },
   {
     "id": 6,
-    "nom": "Fonds Européen pour les Droits Fondamentaux",
-    "organisme": "Commission Européenne",
-    "montant_min": 50000,
-    "montant_max": 500000,
-    "description": "Financement de projets promouvant les droits fondamentaux dont l'égalité femmes-hommes en Europe.",
-    "criteres": ["droits fondamentaux", "égalité", "Europe", "partenariat international"],
-    "zones_geographiques": ["Europe"],
-    "deadline": "Appels annuels",
-    "url": "https://ec.europa.eu"
+    "nom": "Fondation Hirondelle - Genre et Médias",
+    "organisme": "Fondation Hirondelle",
+    "montant_min": 8000,
+    "montant_max": 60000,
+    "description": "Financement pour projets médias promouvant l'égalité des genres en zones fragiles",
+    "criteres": [
+      "Dimension médias",
+      "Zones post-conflit",
+      "Genre et paix",
+      "Pluralisme"
+    ],
+    "zones_geographiques": [
+      "Afrique",
+      "Moyen-Orient",
+      "Asie du Sud"
+    ],
+    "deadline": "Continu",
+    "url": "www.hirondelle.org",
+    "langue": "français et anglais"
   },
   {
     "id": 7,
-    "nom": "Fondation Apprentis d'Auteuil",
-    "organisme": "Fondation Apprentis d'Auteuil",
-    "montant_min": 3000,
-    "montant_max": 20000,
-    "description": "Soutien aux associations accompagnant les jeunes femmes en difficulté vers l'emploi.",
-    "criteres": ["jeunes femmes", "insertion", "emploi", "accompagnement"],
-    "zones_geographiques": ["France"],
-    "deadline": "Septembre 2026",
-    "url": "https://www.apprentis-auteuil.org"
+    "nom": "Comic Relief - Women's Rights",
+    "organisme": "Comic Relief",
+    "montant_min": 5000,
+    "montant_max": 100000,
+    "description": "Financement pour organisations lutant contre la pauvreté et l'inégalité des genres",
+    "criteres": [
+      "Impact anti-pauvreté",
+      "Droits des femmes",
+      "Partenaires locaux"
+    ],
+    "zones_geographiques": [
+      "Afrique",
+      "Asie",
+      "Amérique Latine",
+      "Caraïbes"
+    ],
+    "deadline": "Cycles semestriels",
+    "url": "www.comicrelief.com",
+    "langue": "anglais"
   },
   {
     "id": 8,
-    "nom": "Prix BNPP Women Empowerment",
-    "organisme": "BNP Paribas",
+    "nom": "UN Women - Funding Windows",
+    "organisme": "ONU Femmes",
     "montant_min": 10000,
+    "montant_max": 150000,
+    "description": "Financement pour organisations travaillant sur autonomisation des femmes et égalité des genres",
+    "criteres": [
+      "Alignement ODD",
+      "Travail en partenariat ONU",
+      "Résultats mesurables"
+    ],
+    "zones_geographiques": [
+      "International"
+    ],
+    "deadline": "Cycles annuels - avril/mai",
+    "url": "www.unwomen.org",
+    "langue": "anglais"
+  },
+  {
+    "id": 9,
+    "nom": "Fondation Femmes Solidaires",
+    "organisme": "Femmes Solidaires",
+    "montant_min": 2000,
+    "montant_max": 30000,
+    "description": "Financement pour associations féministes en France et partenaires internationales",
+    "criteres": [
+      "Loi 1901",
+      "Projet féministe",
+      "Mixité et inclusion"
+    ],
+    "zones_geographiques": [
+      "France",
+      "International"
+    ],
+    "deadline": "Appels d'offres annuels - septembre",
+    "url": "www.femmes-solidaires.org",
+    "langue": "français"
+  },
+  {
+    "id": 10,
+    "nom": "Fondation de France - Egalité Femmes-Hommes",
+    "organisme": "Fondation de France",
+    "montant_min": 3000,
     "montant_max": 50000,
-    "description": "Soutien aux associations favorisant l'empowerment économique et professionnel des femmes.",
-    "criteres": ["empowerment économique", "entrepreneuriat féminin", "formation professionnelle"],
-    "zones_geographiques": ["France", "Europe", "Afrique"],
-    "deadline": "Mai 2026",
-    "url": "https://group.bnpparibas"
+    "description": "Financement pour projets promouvant l'égalité et luttant contre violences faites aux femmes",
+    "criteres": [
+      "Projet innovant",
+      "Impacts durables",
+      "Adresse inégalités"
+    ],
+    "zones_geographiques": [
+      "France"
+    ],
+    "deadline": "Continu",
+    "url": "www.fondationdefrance.org",
+    "langue": "français"
+  },
+  {
+    "id": 11,
+    "nom": "Swedish International Development Cooperation Agency - Gender Equality",
+    "organisme": "SIDA",
+    "montant_min": 15000,
+    "montant_max": 300000,
+    "description": "Coopération suédoise pour égalité des genres et droits des femmes dans pays en développement",
+    "criteres": [
+      "Partenariat à long terme",
+      "Focus pays prioritaires",
+      "Efficacité développement"
+    ],
+    "zones_geographiques": [
+      "Afrique",
+      "Asie",
+      "Amérique Latine",
+      "Moyen-Orient"
+    ],
+    "deadline": "Cycles annuels",
+    "url": "www.sida.se",
+    "langue": "anglais"
+  },
+  {
+    "id": 12,
+    "nom": "European Commission - Rights, Equality and Citizenship Programme",
+    "organisme": "Commission Européenne",
+    "montant_min": 25000,
+    "montant_max": 250000,
+    "description": "Financement UE pour égalité des genres, anti-discrimination et droits humains",
+    "criteres": [
+      "Organisations établies",
+      "Dimension européenne",
+      "Gouvernance démocratique"
+    ],
+    "zones_geographiques": [
+      "Europe",
+      "Pays tiers"
+    ],
+    "deadline": "Appels annuels - janvier/février",
+    "url": "ec.europa.eu/justice",
+    "langue": "anglais et français"
+  },
+  {
+    "id": 13,
+    "nom": "Catalyst Foundation - Women in Leadership",
+    "organisme": "Catalyst Foundation",
+    "montant_min": 5000,
+    "montant_max": 75000,
+    "description": "Financement pour femmes dans leadership, entrepreneuriat et prise de décision",
+    "criteres": [
+      "Leadership féminin",
+      "Économie et genre",
+      "Capacités de femmes"
+    ],
+    "zones_geographiques": [
+      "International",
+      "Asie",
+      "Afrique",
+      "Amérique Latine"
+    ],
+    "deadline": "Continu - cycles trimestriels",
+    "url": "www.catalystfoundation.org",
+    "langue": "anglais"
+  },
+  {
+    "id": 14,
+    "nom": "Girl Effect - Gender and Youth",
+    "organisme": "The Girl Effect",
+    "montant_min": 10000,
+    "montant_max": 120000,
+    "description": "Financement pour empowerment des adolescentes et jeunes femmes",
+    "criteres": [
+      "Focus adolescentes",
+      "Impact économique",
+      "Santé et éducation"
+    ],
+    "zones_geographiques": [
+      "Afrique subsaharienne",
+      "Asie du Sud",
+      "Amérique Latine"
+    ],
+    "deadline": "Cycles annuels",
+    "url": "www.thegirleffect.org",
+    "langue": "anglais"
+  },
+  {
+    "id": 15,
+    "nom": "Fondation Diane de Rothschild",
+    "organisme": "Fondation Diane de Rothschild",
+    "montant_min": 5000,
+    "montant_max": 50000,
+    "description": "Financement pour projets d'égalité des chances et lutte contre discriminations envers femmes",
+    "criteres": [
+      "Innovation",
+      "Partenariats",
+      "Mesure d'impact"
+    ],
+    "zones_geographiques": [
+      "France",
+      "Europe"
+    ],
+    "deadline": "Appels annuels",
+    "url": "www.fondationdianederothschild.org",
+    "langue": "français"
+  },
+  {
+    "id": 16,
+    "nom": "NoVo Foundation - Women's Justice",
+    "organisme": "NoVo Foundation",
+    "montant_min": 8000,
+    "montant_max": 200000,
+    "description": "Financement pour justice sociale et droits humains des femmes et filles marginalisées",
+    "criteres": [
+      "Justice systémique",
+      "Advocacy transformatrice",
+      "Partenaires de base"
+    ],
+    "zones_geographiques": [
+      "International",
+      "USA",
+      "Afrique",
+      "Asie",
+      "Amérique Latine"
+    ],
+    "deadline": "Continu",
+    "url": "www.novofoundation.org",
+    "langue": "anglais"
+  },
+  {
+    "id": 17,
+    "nom": "ActionAid Women's Rights Fund",
+    "organisme": "ActionAid International",
+    "montant_min": 3000,
+    "montant_max": 45000,
+    "description": "Financement pour organisations de femmes et mouvements féministes au Sud Global",
+    "criteres": [
+      "Leadership de femmes du Sud",
+      "Approche participative",
+      "Droits humains"
+    ],
+    "zones_geographiques": [
+      "Afrique",
+      "Asie",
+      "Amérique Latine",
+      "Pacifique"
+    ],
+    "deadline": "Continu - cycles mensuels",
+    "url": "www.actionaid.org",
+    "langue": "anglais"
+  },
+  {
+    "id": 18,
+    "nom": "Fondation Orangerie - Violences faites aux femmes",
+    "organisme": "Fondation Orangerie",
+    "montant_min": 4000,
+    "montant_max": 40000,
+    "description": "Financement pour prévention et accompagnement des femmes victimes de violences",
+    "criteres": [
+      "Structuration",
+      "Partenariats locaux",
+      "Accessibilité"
+    ],
+    "zones_geographiques": [
+      "France"
+    ],
+    "deadline": "Appels annuels - février",
+    "url": "www.fondationorangerie.org",
+    "langue": "français"
+  },
+  {
+    "id": 19,
+    "nom": "Friedrich-Ebert-Stiftung - Gender Justice",
+    "organisme": "Friedrich Ebert Foundation",
+    "montant_min": 5000,
+    "montant_max": 80000,
+    "description": "Financement allemand pour démocratie, égalité des genres et justice sociale",
+    "criteres": [
+      "Partenaires démocratiques",
+      "Dialogue politique",
+      "Capacity building"
+    ],
+    "zones_geographiques": [
+      "Afrique",
+      "Asie",
+      "Amérique Latine",
+      "Moyen-Orient",
+      "Europe"
+    ],
+    "deadline": "Continu",
+    "url": "www.fes.de",
+    "langue": "anglais et français"
+  },
+  {
+    "id": 20,
+    "nom": "Bloomberg Philanthropies - Women's Empowerment",
+    "organisme": "Bloomberg Philanthropies",
+    "montant_min": 20000,
+    "montant_max": 500000,
+    "description": "Financement pour autonomisation économique des femmes et égalité professionnelle",
+    "criteres": [
+      "Impact économique mesurable",
+      "Approche data-driven",
+      "Scalabilité"
+    ],
+    "zones_geographiques": [
+      "International",
+      "Asie",
+      "Afrique",
+      "Amérique Latine"
+    ],
+    "deadline": "Par invitation et appels ciblés",
+    "url": "www.bloomberg.org",
+    "langue": "anglais"
+  },
+  {
+    "nom": "Appel à projets pour l'égalité femmes-hommes",
+    "organisme": "Ministère Égalité Femmes-Hommes",
+    "montant_min": 5000,
+    "montant_max": 100000,
+    "description": "Financement de projets visant à promouvoir l'égalité entre les femmes et les hommes, réduire les inégalités et lutter contre les discriminations",
+    "criteres": [
+      "Projet favorisant l'égalité femmes-hommes",
+      "Structures publiques, associations ou organisations de la société civile éligibles",
+      "Démonstration d'impact mesurable",
+      "Conformité avec les objectifs gouvernementaux d'égalité"
+    ],
+    "zones_geographiques": [
+      "France"
+    ],
+    "deadline": "À consulter sur le site officiel",
+    "url": "https://www.egalite-femmes-hommes.gouv.fr/appels-a-projets",
+    "langue": "français",
+    "id": 21
+  },
+  {
+    "nom": "Subvention pour la lutte contre les discriminations",
+    "organisme": "Ministère Égalité Femmes-Hommes",
+    "montant_min": 3000,
+    "montant_max": 75000,
+    "description": "Financement de projets et initiatives de sensibilisation, prévention et action contre toutes formes de discriminations basées sur le genre, l'origine ou d'autres critères protégés",
+    "criteres": [
+      "Action de lutte contre les discriminations",
+      "Bénéficiaires: femmes, groupes vulnérables",
+      "Partenariats locaux ou nationaux",
+      "Évaluation et reporting obligatoires"
+    ],
+    "zones_geographiques": [
+      "France"
+    ],
+    "deadline": "À consulter sur le site officiel",
+    "url": "https://www.egalite-femmes-hommes.gouv.fr/appels-a-projets",
+    "langue": "français",
+    "id": 22
+  },
+  {
+    "nom": "International Feminist Fund",
+    "organisme": "Global Fund for Women",
+    "montant_min": 5000,
+    "montant_max": 50000,
+    "description": "Financement pour les organisations féministes travaillant sur les droits des femmes, l'égalité de genre et l'autonomisation des femmes dans les pays du Sud et régions sous-représentées.",
+    "criteres": [
+      "Organisation dirigée ou fondée par des femmes",
+      "Travail documenté sur les droits des femmes",
+      "Impact local et régional démontré",
+      "Budget transparent"
+    ],
+    "zones_geographiques": [
+      "Afrique",
+      "Asie",
+      "Amérique latine",
+      "Moyen-Orient",
+      "Pacifique"
+    ],
+    "deadline": "Appels continus par cycles trimestriels",
+    "url": "https://www.globalfundforwomen.org/grants",
+    "langue": "anglais",
+    "id": 23
+  },
+  {
+    "nom": "Women's Leadership and Advocacy Grant",
+    "organisme": "Global Fund for Women",
+    "montant_min": 3000,
+    "montant_max": 35000,
+    "description": "Soutien aux initiatives de leadership et plaidoyer féministe menées par des femmes pour transformer les structures de pouvoir et promouvoir la justice de genre.",
+    "criteres": [
+      "Leadership féminin démontré",
+      "Projet de plaidoyer ou politique publique",
+      "Capacité organisationnelle",
+      "Engagement communautaire"
+    ],
+    "zones_geographiques": [
+      "International"
+    ],
+    "deadline": "Appels continus",
+    "url": "https://www.globalfundforwomen.org/grants",
+    "langue": "anglais",
+    "id": 24
+  },
+  {
+    "nom": "Solidarity Fund",
+    "organisme": "Mama Cash",
+    "montant_min": 30000,
+    "montant_max": 30000,
+    "description": "Fonds de solidarité pour les mouvements féministes et de droits humains des femmes, filles, personnes trans et intersexes",
+    "criteres": [
+      "Perspective féministe, droits des femmes, filles, personnes trans et/ou intersexes",
+      "Autogérée par les femmes, filles, personnes trans et/ou intersexes qu'elles servent",
+      "Promotion des droits humains comme mission principale",
+      "Viser un changement structurel et fondamental",
+      "Focus sur des enjeux sous-adressés et/ou contestés"
+    ],
+    "zones_geographiques": [
+      "International"
+    ],
+    "deadline": "20 mars 2025",
+    "url": "https://www.mamacash.org/apply-for-a-grant",
+    "langue": "anglais",
+    "id": 25
+  },
+  {
+    "nom": "Resilience Fund",
+    "organisme": "Mama Cash",
+    "montant_min": 5000,
+    "montant_max": 50000,
+    "description": "Fonds de résilience pour renforcer les organisations féministes et de droits des femmes avec une subvention moyenne de 35 000 euros par an",
+    "criteres": [
+      "Perspective féministe, droits des femmes, filles, personnes trans et/ou intersexes",
+      "Autogérée par les femmes, filles, personnes trans et/ou intersexes qu'elles servent",
+      "Promotion des droits humains comme mission principale",
+      "Viser un changement structurel et fondamental",
+      "Focus sur des enjeux sous-adressés et/ou contestés"
+    ],
+    "zones_geographiques": [
+      "International"
+    ],
+    "deadline": "31 août 2025",
+    "url": "https://www.mamacash.org/apply-for-a-grant",
+    "langue": "anglais",
+    "id": 26
+  },
+  {
+    "nom": "Revolution Fund",
+    "organisme": "Mama Cash",
+    "montant_min": 5000,
+    "montant_max": 10000,
+    "description": "Fonds pour les projets révolutionnaires et transformateurs dans le domaine des droits féministes",
+    "criteres": [
+      "Perspective féministe, droits des femmes, filles, personnes trans et/ou intersexes",
+      "Autogérée par les femmes, filles, personnes trans et/ou intersexes qu'elles servent",
+      "Promotion des droits humains comme mission principale",
+      "Viser un changement structurel et fondamental",
+      "Focus sur des enjeux sous-adressés et/ou contestés"
+    ],
+    "zones_geographiques": [
+      "International"
+    ],
+    "deadline": "Consultez le site pour les dates",
+    "url": "https://www.mamacash.org/apply-for-a-grant",
+    "langue": "anglais",
+    "id": 27
+  },
+  {
+    "nom": "Radical Love Fund",
+    "organisme": "Mama Cash",
+    "montant_min": 7000,
+    "montant_max": 7000,
+    "description": "Fonds pour les initiatives d'amour radical et de justice féministe intersectionnelle",
+    "criteres": [
+      "Perspective féministe, droits des femmes, filles, personnes trans et/ou intersexes",
+      "Autogérée par les femmes, filles, personnes trans et/ou intersexes qu'elles servent",
+      "Promotion des droits humains comme mission principale",
+      "Viser un changement structurel et fondamental",
+      "Focus sur des enjeux sous-adressés et/ou contestés"
+    ],
+    "zones_geographiques": [
+      "International"
+    ],
+    "deadline": "Consultez le site pour les dates",
+    "url": "https://www.mamacash.org/apply-for-a-grant",
+    "langue": "anglais",
+    "id": 28
+  },
+  {
+    "nom": "Spark Fund",
+    "organisme": "Mama Cash",
+    "montant_min": 5000,
+    "montant_max": 7000,
+    "description": "Fonds pour amorcer des projets, réagir à des besoins urgents ou lancer de nouvelles idées féministes",
+    "criteres": [
+      "Expérience significative et démontrée dans les communautés et mouvements féministes",
+      "Engagement dans un travail qui fera avancer l'agenda du mouvement",
+      "Créer une opportunité de changement, répondre à un besoin urgent, ou amorcer un nouveau projet",
+      "Refléter la vision, mission et valeurs institutionnelles de Mama Cash"
+    ],
+    "zones_geographiques": [
+      "International"
+    ],
+    "deadline": "1er août 2025",
+    "url": "https://www.mamacash.org/apply-for-a-grant",
+    "langue": "anglais",
+    "id": 29
+  },
+  {
+    "nom": "UN Women Civil Society Organization Grant Program",
+    "organisme": "UN Women",
+    "montant_min": 5000,
+    "montant_max": 100000,
+    "description": "Programme de financement destiné aux organisations de la société civile travaillant sur l'égalité des genres, l'autonomisation des femmes et l'élimination de la violence basée sur le genre.",
+    "criteres": [
+      "Organisation enregistrée légalement",
+      "Expérience démontrée en défense des droits des femmes",
+      "Capacités organisationnelles et financières",
+      "Alignement avec les priorités de UN Women"
+    ],
+    "zones_geographiques": [
+      "International",
+      "Régions prioritaires"
+    ],
+    "deadline": "Appels continus ou cycles annuels",
+    "url": "https://www.unwomen.org/en/grants-and-partnerships",
+    "langue": "anglais",
+    "id": 30
+  },
+  {
+    "nom": "Spotlight Initiative Grant - Violence Against Women Prevention",
+    "organisme": "UN Women",
+    "montant_min": 10000,
+    "montant_max": 250000,
+    "description": "Financement pour des projets visant à prévenir et éliminer toutes les formes de violence envers les femmes et les filles à travers des initiatives communautaires et systémiques.",
+    "criteres": [
+      "Approche holistique de la prévention",
+      "Partenariats multi-sectoriels",
+      "Focus sur les femmes et filles vulnérables",
+      "Plans de suivi et évaluation rigoureux"
+    ],
+    "zones_geographiques": [
+      "Afrique",
+      "Asie du Sud",
+      "Amérique Latine",
+      "Moyen-Orient"
+    ],
+    "deadline": "Cycles annuels de financement",
+    "url": "https://www.unwomen.org/en/grants-and-partnerships",
+    "langue": "anglais",
+    "id": 31
+  },
+  {
+    "nom": "Renforcer les liens de proximité en ruralité",
+    "organisme": "Fondation de France",
+    "montant_min": null,
+    "montant_max": null,
+    "description": "Contribuer à la prévention et à la réduction de la solitude et de l'isolement des personnes habitant dans des territoires ruraux fragilisés en favorisant le renforcement des liens de proximité incluant les personnes les plus vulnérables.",
+    "criteres": [
+      "Territoires ruraux fragilisés",
+      "Prévention de la solitude",
+      "Inclusion des personnes vulnérables",
+      "Renforcement des liens de proximité"
+    ],
+    "zones_geographiques": [
+      "France"
+    ],
+    "deadline": "8 avril 2026",
+    "url": "https://www.fondationdefrance.org/fr/appels-a-projets",
+    "langue": "français",
+    "id": 32
+  },
+  {
+    "nom": "Agir ensemble sur les inégalités dès le plus jeune âge",
+    "organisme": "Fondation de France",
+    "montant_min": null,
+    "montant_max": null,
+    "description": "Intervenir dès les premières années de vie pour agir sur les inégalités, favoriser l'éveil, les apprentissages et les interactions sociales des jeunes enfants, particulièrement ceux en situations difficiles.",
+    "criteres": [
+      "Enfants en bas âge",
+      "Réduction des inégalités",
+      "Développement de l'enfant",
+      "Égalité des chances"
+    ],
+    "zones_geographiques": [
+      "France"
+    ],
+    "deadline": "29 avril 2026",
+    "url": "https://www.fondationdefrance.org/fr/appels-a-projets",
+    "langue": "français",
+    "id": 33
+  },
+  {
+    "nom": "Cultivons l'art en milieu rural : vers des permanences artistiques de territoires",
+    "organisme": "Fondation de France Centre-Est",
+    "montant_min": null,
+    "montant_max": null,
+    "description": "Soutenir les projets artistiques et culturels en milieu rural pour créer des permanences artistiques durables dans les territoires.",
+    "criteres": [
+      "Milieu rural",
+      "Projets artistiques et culturels",
+      "Accès à la culture",
+      "Permanences artistiques de territoires"
+    ],
+    "zones_geographiques": [
+      "France Centre-Est"
+    ],
+    "deadline": "14 octobre 2025",
+    "url": "https://www.fondationdefrance.org/fr/appels-a-projets",
+    "langue": "français",
+    "id": 34
+  },
+  {
+    "nom": "Soutien aux projets féministes et d'égalité des genres",
+    "organisme": "Fondation de France",
+    "montant_min": 5000,
+    "montant_max": 100000,
+    "description": "Financer des projets œuvrant pour l'égalité des genres, l'autonomisation des femmes et la lutte contre les discriminations basées sur le genre.",
+    "criteres": [
+      "Égalité des genres",
+      "Autonomisation des femmes",
+      "Lutte contre les discriminations",
+      "Organisations féministes"
+    ],
+    "zones_geographiques": [
+      "France",
+      "International"
+    ],
+    "deadline": "Appel continu",
+    "url": "https://www.fondationdefrance.org/fr/appels-a-projets",
+    "langue": "français",
+    "id": 35
+  },
+  {
+    "nom": "Financement de projets d'éducation des femmes et des jeunes filles",
+    "organisme": "Fondation de France",
+    "montant_min": 3000,
+    "montant_max": 75000,
+    "description": "Soutenir des initiatives d'accès à l'éducation, à la formation professionnelle et au développement des compétences pour les femmes et jeunes filles en situation de vulnérabilité.",
+    "criteres": [
+      "Éducation des femmes",
+      "Formation professionnelle",
+      "Jeunes filles",
+      "Situations de vulnérabilité",
+      "Égalité des chances"
+    ],
+    "zones_geographiques": [
+      "France",
+      "International"
+    ],
+    "deadline": "Appel continu",
+    "url": "https://www.fondationdefrance.org/fr/appels-a-projets",
+    "langue": "français",
+    "id": 36
   }
 ]
