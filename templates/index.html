@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrantHer — Trouvez vos financements</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #fdf5f9;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #7a2df5, #310e88);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .formulaire {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 20px rgba(194,24,91,0.1);
+            margin-bottom: 40px;
+        }
+
+        .formulaire h2 {
+            color: #7427e0;
+            margin-bottom: 24px;
+            font-size: 1.3em;
+        }
+
+        .champ {
+            margin-bottom: 20px;
+        }
+
+        .champ label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .champ input, .champ textarea, .champ select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            font-size: 1em;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .champ input:focus, .champ textarea:focus, .champ select:focus {
+            border-color: #8718c2;
+        }
+
+        .champ textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #6a18c2, #490e88);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            width: 100%;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover { opacity: 0.9; }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #c2185b;
+            font-style: italic;
+            display: none;
+        }
+
+        .resultats { display: none; }
+
+        .resultats h2 {
+            color: #c2185b;
+            margin-bottom: 24px;
+            font-size: 1.3em;
+        }
+
+        .grant-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 20px rgba(194,24,91,0.08);
+            border-left: 4px solid #6718c2;
+        }
+
+        .grant-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .grant-titre {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .grant-organisme {
+            color: #888;
+            font-size: 0.9em;
+            margin-top: 4px;
+        }
+
+        .score {
+            background: #6218c2;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 24px;
+            font-weight: bold;
+            font-size: 1.1em;
+            white-space: nowrap;
+        }
+
+        .score.haut { background: #2e7d32; }
+        .score.moyen { background: #f57c00; }
+        .score.bas { background: #c62828; }
+
+        .grant-raison {
+            color: #555;
+            font-size: 0.95em;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .grant-infos {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            font-size: 0.85em;
+            color: #777;
+        }
+
+        .grant-infos span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .grant-link {
+            display: inline-block;
+            margin-top: 12px;
+            color: #c2185b;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .grant-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>💜 GrantHer</h1>
+        <p>Trouvez les financements qui correspondent à votre association</p>
+    </header>
+
+    <div class="container">
+        <div class="formulaire">
+            <h2>📋 Profil de votre association</h2>
+            
+            <div class="champ">
+                <label>Nom de l'association</label>
+                <input type="text" id="nom" placeholder="Ex: DesCodeuses" />
+            </div>
+
+            <div class="champ">
+                <label>Mission principale</label>
+                <textarea id="mission" placeholder="Décrivez la mission de votre association..."></textarea>
+            </div>
+
+            <div class="champ">
+                <label>Activités principales</label>
+                <input type="text" id="activites" placeholder="Ex: formation, accompagnement, sensibilisation" />
+            </div>
+
+            <div class="champ">
+                <label>Zone géographique</label>
+                <select id="zone">
+                    <option value="France">France</option>
+                    <option value="Europe">Europe</option>
+                    <option value="Afrique">Afrique</option>
+                    <option value="International">International</option>
+                </select>
+            </div>
+
+            <div class="champ">
+                <label>Budget annuel approximatif</label>
+                <select id="budget">
+                    <option value="moins de 10 000€">Moins de 10 000€</option>
+                    <option value="10 000€ - 50 000€">10 000€ - 50 000€</option>
+                    <option value="50 000€ - 200 000€">50 000€ - 200 000€</option>
+                    <option value="plus de 200 000€">Plus de 200 000€</option>
+                </select>
+            </div>
+
+            <button class="btn" onclick="lancerMatching()">
+                🔍 Trouver mes financements
+            </button>
+        </div>
+
+        <div class="loading" id="loading">
+            💜 GrantHer analyse votre profil et recherche les meilleurs financements...
+        </div>
+
+        <div class="resultats" id="resultats">
+            <h2 id="titre-resultats"></h2>
+            <div id="liste-grants"></div>
+        </div>
+    </div>
+
+    <script>
+        async function lancerMatching() {
+            const nom = document.getElementById("nom").value;
+            const mission = document.getElementById("mission").value;
+            const activites = document.getElementById("activites").value;
+            const zone = document.getElementById("zone").value;
+            const budget = document.getElementById("budget").value;
+
+            if (!nom || !mission) {
+                alert("Merci de remplir au moins le nom et la mission de votre association.");
+                return;
+            }
+
+            document.getElementById("loading").style.display = "block";
+            document.getElementById("resultats").style.display = "none";
+
+            const profil = {
+                nom: nom,
+                mission: mission,
+                activites: activites.split(",").map(a => a.trim()),
+                zone: zone,
+                budget_annuel: budget
+            };
+
+            const reponse = await fetch("/matching", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(profil)
+            });
+
+            const grants = await reponse.json();
+
+            document.getElementById("loading").style.display = "none";
+            document.getElementById("resultats").style.display = "block";
+            document.getElementById("titre-resultats").textContent = 
+                `🎉 ${grants.length} financements trouvés pour ${nom} !`;
+
+            const liste = document.getElementById("liste-grants");
+            liste.innerHTML = "";
+
+            grants.forEach(grant => {
+                const scoreClass = grant.score >= 80 ? "haut" : grant.score >= 60 ? "moyen" : "bas";
+                liste.innerHTML += `
+                    <div class="grant-card">
+                        <div class="grant-header">
+                            <div>
+                                <div class="grant-titre">${grant.nom}</div>
+                                <div class="grant-organisme">${grant.organisme}</div>
+                            </div>
+                            <div class="score ${scoreClass}">${grant.score}% match</div>
+                        </div>
+                        <div class="grant-raison">${grant.raison}</div>
+                        <div class="grant-infos">
+                            <span>💰 ${grant.montant_min.toLocaleString()}€ - ${grant.montant_max.toLocaleString()}€</span>
+                            <span>📅 ${grant.deadline}</span>
+                        </div>
+                        <a href="${grant.url}" target="_blank" class="grant-link">
+                            → Voir le financement
+                        </a>
+                    </div>
+                `;
+            });
+        }
+    </script>
+</body>
+</html>

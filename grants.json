@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "nom": "Subventions égalité femmes-hommes",
+    "organisme": "Ministère chargé de l'Égalité",
+    "montant_min": 5000,
+    "montant_max": 50000,
+    "description": "Soutien aux associations œuvrant pour l'égalité entre les femmes et les hommes en France.",
+    "criteres": ["association loi 1901", "activité en France", "thématique égalité femmes-hommes"],
+    "zones_geographiques": ["France"],
+    "deadline": "Avril 2026",
+    "url": "https://www.egalite-femmes-hommes.gouv.fr"
+  },
+  {
+    "id": 2,
+    "nom": "Fondation L'Oréal - Femmes et Science",
+    "organisme": "Fondation L'Oréal",
+    "montant_min": 15000,
+    "montant_max": 20000,
+    "description": "Soutien aux femmes scientifiques et aux associations promouvant les femmes dans les sciences et la tech.",
+    "criteres": ["femmes dans la tech", "éducation", "formation", "sciences"],
+    "zones_geographiques": ["France", "International"],
+    "deadline": "Mars 2026",
+    "url": "https://www.fondationloreal.com"
+  },
+  {
+    "id": 3,
+    "nom": "Prix Initiatives Femmes",
+    "organisme": "Fondation RAJA-Danièle Marcovici",
+    "montant_min": 8000,
+    "montant_max": 15000,
+    "description": "Soutien aux associations qui favorisent l'autonomie économique des femmes.",
+    "criteres": ["autonomie économique", "femmes en difficulté", "insertion professionnelle"],
+    "zones_geographiques": ["France"],
+    "deadline": "Juin 2026",
+    "url": "https://www.fondationraja.org"
+  },
+  {
+    "id": 4,
+    "nom": "Fonds Minka - Inclusion numérique",
+    "organisme": "Crédit Coopératif",
+    "montant_min": 5000,
+    "montant_max": 30000,
+    "description": "Financement de projets d'inclusion numérique pour les publics éloignés du numérique.",
+    "criteres": ["inclusion numérique", "formation", "publics vulnérables", "association loi 1901"],
+    "zones_geographiques": ["France"],
+    "deadline": "Ouvert en continu",
+    "url": "https://www.kredim.org"
+  },
+  {
+    "id": 5,
+    "nom": "ONU Femmes - Fonds pour l'égalité",
+    "organisme": "ONU Femmes",
+    "montant_min": 25000,
+    "montant_max": 100000,
+    "description": "Financement de programmes pour l'égalité des genres et l'autonomisation des femmes.",
+    "criteres": ["égalité des genres", "droits des femmes", "empowerment", "impact mesurable"],
+    "zones_geographiques": ["France", "Afrique", "International"],
+    "deadline": "Variable selon appels",
+    "url": "https://www.unwomen.org"
+  },
+  {
+    "id": 6,
+    "nom": "Fonds Européen pour les Droits Fondamentaux",
+    "organisme": "Commission Européenne",
+    "montant_min": 50000,
+    "montant_max": 500000,
+    "description": "Financement de projets promouvant les droits fondamentaux dont l'égalité femmes-hommes en Europe.",
+    "criteres": ["droits fondamentaux", "égalité", "Europe", "partenariat international"],
+    "zones_geographiques": ["Europe"],
+    "deadline": "Appels annuels",
+    "url": "https://ec.europa.eu"
+  },
+  {
+    "id": 7,
+    "nom": "Fondation Apprentis d'Auteuil",
+    "organisme": "Fondation Apprentis d'Auteuil",
+    "montant_min": 3000,
+    "montant_max": 20000,
+    "description": "Soutien aux associations accompagnant les jeunes femmes en difficulté vers l'emploi.",
+    "criteres": ["jeunes femmes", "insertion", "emploi", "accompagnement"],
+    "zones_geographiques": ["France"],
+    "deadline": "Septembre 2026",
+    "url": "https://www.apprentis-auteuil.org"
+  },
+  {
+    "id": 8,
+    "nom": "Prix BNPP Women Empowerment",
+    "organisme": "BNP Paribas",
+    "montant_min": 10000,
+    "montant_max": 50000,
+    "description": "Soutien aux associations favorisant l'empowerment économique et professionnel des femmes.",
+    "criteres": ["empowerment économique", "entrepreneuriat féminin", "formation professionnelle"],
+    "zones_geographiques": ["France", "Europe", "Afrique"],
+    "deadline": "Mai 2026",
+    "url": "https://group.bnpparibas"
+  }
+]
