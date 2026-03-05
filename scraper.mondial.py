@@ -34,7 +34,72 @@ SOURCES = [
         "nom": "Fondation de France",
         "url": "https://www.fondationdefrance.org/fr/appels-a-projets",
         "langue": "français"
-    }
+    },
+    {
+        "nom": "FundsForNGOs - Women & Gender",
+        "url": "https://www2.fundsforngos.org/category/women-gender/",
+        "langue": "anglais"
+},
+{
+        "nom": "AWID Feminist Donor List",
+        "url": "https://www.awid.org/resources/feminist-donor-list-who-can-fund-my-womens-rights-organizing",
+        "langue": "anglais"
+},
+{
+        "nom": "Girls Not Brides - Global Foundations",
+        "url": "https://www.girlsnotbrides.org/learning-resources/fundraising/donors/global-foundations/",
+        "langue": "anglais"
+},
+        {
+       "nom": "Mama Cash",
+       "url": "https://www.mamacash.org/en/apply-for-a-grant",
+       "langue": "anglais"
+},
+{
+    "nom": "Ford Foundation - Gender Justice",
+    "url": "https://www.fordfoundation.org/work/challenging-inequality/gender-racial-and-ethnic-justice/",
+    "langue": "anglais"
+},
+{
+    "nom": "Open Society Foundations - Women",
+    "url": "https://www.opensocietyfoundations.org/focus/womens-rights",
+    "langue": "anglais"
+},
+{
+    "nom": "Women's Funding Network",
+    "url": "https://www.womensfundingnetwork.org/members/",
+    "langue": "anglais"
+},
+{
+    "nom": "FRIDA Young Feminist Fund",
+    "url": "https://youngfeministfund.org/apply/",
+    "langue": "anglais"
+},
+{
+    "nom": "Equality Fund",
+    "url": "https://equalityfund.ca/apply-for-funding/",
+    "langue": "anglais"
+},
+{
+    "nom": "UN Women Grants",
+    "url": "https://www.unwomen.org/en/grants-and-partnerships/grants",
+    "langue": "anglais"
+},
+{
+    "nom": "Ms Foundation for Women",
+    "url": "https://forwomen.org/our-grants/",
+    "langue": "anglais"
+},
+{
+    "nom": "Urgent Action Fund",
+    "url": "https://urgentactionfund.org/apply-for-a-grant/",
+    "langue": "anglais"
+},
+{
+    "nom": "Impact Funding Newsletter",
+    "url": "https://impactfunding.substack.com/p/gender-equality-and-women-empowerment-6e5",
+    "langue": "anglais"
+}
 ]
 
 def scraper_page(url):
