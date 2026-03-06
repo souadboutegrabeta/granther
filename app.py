@@ -6,6 +6,10 @@ load_dotenv(dotenv_path="../.env")
 
 app = Flask(__name__)
 
+@app.route("/")
+def index():
+    return render_template("index.html")
+
 @app.route("/ping")
 def ping():
     return "ok", 200
