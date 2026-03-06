@@ -13,28 +13,6 @@
             color: #333;
         }
 
-       <div id="banner" style="background: linear-gradient(135deg, #7b1fa2, #4a148c); color: white; text-align: center; padding: 12px 20px; font-size: 14px;">
-  💜 GrantHer grandit ! <strong>Inscris-toi pour recevoir les nouveaux grants chaque mois</strong> 
-  <input type="email" id="email-banner" placeholder="ton@email.fr" style="margin: 0 10px; padding: 6px 12px; border-radius: 20px; border: none; font-size: 13px; width: 220px;">
-  <button onclick="inscrire()" style="background: white; color: #7b1fa2; border: none; padding: 6px 16px; border-radius: 20px; font-weight: bold; cursor: pointer;">Je m'inscris !</button>
-  <span id="merci-banner" style="display:none; margin-left:10px; font-weight:bold;">✅ Merci ! Tu recevras les nouveaux grants chaque mois 💜</span>
-</div>
-
-<script>
-function inscrire() {
-  const email = document.getElementById('email-banner').value;
-  if (!email || !email.includes('@')) {
-    alert('Merci d\'entrer un email valide !');
-    return;
-  }
-  const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfj-Fdza7BOnpGTqxll4ovB-oW8yFZZImmueUPfSGgsnerGzA/formResponse?entry.1811904196=' + encodeURIComponent(email);
-  fetch(formUrl, { mode: 'no-cors' });
-  document.getElementById('email-banner').style.display = 'none';
-  document.querySelector('#banner button').style.display = 'none';
-  document.getElementById('merci-banner').style.display = 'inline';
-}
-</script>
-
         header {
             background: linear-gradient(135deg, #7a2df5, #310e88);
             color: white;
@@ -208,6 +186,29 @@ function inscrire() {
     </style>
 </head>
 <body>
+        <div id="banner" style="background: linear-gradient(135deg, #7b1fa2, #4a148c); color: white; text-align: center; padding: 12px 20px; font-size: 14px;">
+  💜 GrantHer grandit ! <strong>Inscris-toi pour recevoir les nouveaux grants chaque mois</strong> 
+  <input type="email" id="email-banner" placeholder="ton@email.fr" style="margin: 0 10px; padding: 6px 12px; border-radius: 20px; border: none; font-size: 13px; width: 220px;">
+  <button onclick="inscrire()" style="background: white; color: #7b1fa2; border: none; padding: 6px 16px; border-radius: 20px; font-weight: bold; cursor: pointer;">Je m'inscris !</button>
+  <span id="merci-banner" style="display:none; margin-left:10px; font-weight:bold;">✅ Merci ! Tu recevras les nouveaux grants chaque mois 💜</span>
+</div>
+
+<script>
+function inscrire() {
+  const email = document.getElementById('email-banner').value;
+  if (!email || !email.includes('@')) {
+    alert('Merci d\'entrer un email valide !');
+    return;
+  }
+  const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfj-Fdza7BOnpGTqxll4ovB-oW8yFZZImmueUPfSGgsnerGzA/formResponse?entry.1811904196=' + encodeURIComponent(email);
+  fetch(formUrl, { mode: 'no-cors' });
+  document.getElementById('email-banner').style.display = 'none';
+  document.querySelector('#banner button').style.display = 'none';
+  document.getElementById('merci-banner').style.display = 'inline';
+}
+</script>§
+
+
     <header>
         <h1>💜 GrantHer</h1>
         <p>Trouvez les financements qui correspondent à votre association</p>
