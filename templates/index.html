@@ -186,6 +186,24 @@
     </style>
 </head>
 <body>
+    <div id="loading-overlay" style="
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(74, 20, 140, 0.93);
+  z-index: 9999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+">
+  <div style="font-size: 4rem; margin-bottom: 1.5rem;">💜</div>
+  <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 1rem;">Recherche en cours...</h2>
+  <p style="font-size: 1.2rem; opacity: 0.9; line-height: 1.6;">L'IA analyse votre profil<br>et cherche les meilleurs grants<br>dans le monde entier ✨</p>
+  <p style="font-size: 0.95rem; opacity: 0.6; margin-top: 1.5rem;">⏳ Cela prend 10 à 20 secondes</p>
+</div>
         <div id="banner" style="background: linear-gradient(135deg, #7b1fa2, #4a148c); color: white; text-align: center; padding: 12px 20px; font-size: 14px;">
   💜 GrantHer grandit ! <strong>Inscris-toi pour recevoir les nouveaux grants chaque mois</strong> 
   <input type="email" id="email-banner" placeholder="ton@email.fr" style="margin: 0 10px; padding: 6px 12px; border-radius: 20px; border: none; font-size: 13px; width: 220px;">
@@ -268,69 +286,76 @@ function inscrire() {
         </div>
     </div>
 
-    <script>
-        async function lancerMatching() {
-            const nom = document.getElementById("nom").value;
-            const mission = document.getElementById("mission").value;
-            const activites = document.getElementById("activites").value;
-            const zone = document.getElementById("zone").value;
-            const budget = document.getElementById("budget").value;
+    async function lancerMatching() {
+    const nom = document.getElementById("nom").value;
+    const mission = document.getElementById("mission").value;
+    const activites = document.getElementById("activites").value;
+    const zone = document.getElementById("zone").value;
+    const budget = document.getElementById("budget").value;
 
-            if (!nom || !mission) {
-                alert("Merci de remplir au moins le nom et la mission de votre association.");
-                return;
-            }
+    if (!nom || !mission) {
+        alert("Merci de remplir au moins le nom et la mission de votre association.");
+        return;
+    }
 
-            document.getElementById("loading").style.display = "block";
-            document.getElementById("resultats").style.display = "none";
+    // Afficher l'overlay AVANT le fetch
+    document.getElementById('loading-overlay').style.display = 'flex';
 
-            const profil = {
-                nom: nom,
-                mission: mission,
-                activites: activites.split(",").map(a => a.trim()),
-                zone: zone,
-                budget_annuel: budget
-            };
+    const profil = {
+        nom: nom,
+        mission: mission,
+        activites: activites.split(",").map(a => a.trim()),
+        zone: zone,
+        budget_annuel: budget
+    };
 
-            const reponse = await fetch("/matching", {
-                method: "POST",
-                headers: {"Content-Type": "application/json"},
-                body: JSON.stringify(profil)
-            });
+    try {
+        const reponse = await fetch("/matching", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(profil)
+        });
 
-            const grants = await reponse.json();
+        const grants = await reponse.json();
 
-            document.getElementById("loading").style.display = "none";
-            document.getElementById("resultats").style.display = "block";
-            document.getElementById("titre-resultats").textContent = 
-                `🎉 ${grants.length} financements trouvés pour ${nom} !`;
+        // Cacher l'overlay APRÈS avoir reçu les résultats
+        document.getElementById('loading-overlay').style.display = 'none';
 
-            const liste = document.getElementById("liste-grants");
-            liste.innerHTML = "";
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("resultats").style.display = "block";
+        document.getElementById("titre-resultats").textContent = 
+            `🎉 ${grants.length} financements trouvés pour ${nom} !`;
 
-            grants.forEach(grant => {
-                const scoreClass = grant.score >= 80 ? "haut" : grant.score >= 60 ? "moyen" : "bas";
-                liste.innerHTML += `
-                    <div class="grant-card">
-                        <div class="grant-header">
-                            <div>
-                                <div class="grant-titre">${grant.nom}</div>
-                                <div class="grant-organisme">${grant.organisme}</div>
-                            </div>
-                            <div class="score ${scoreClass}">${grant.score}% match</div>
+        const liste = document.getElementById("liste-grants");
+        liste.innerHTML = "";
+
+        grants.forEach(grant => {
+            const scoreClass = grant.score >= 80 ? "haut" : grant.score >= 60 ? "moyen" : "bas";
+            liste.innerHTML += `
+                <div class="grant-card">
+                    <div class="grant-header">
+                        <div>
+                            <div class="grant-titre">${grant.nom}</div>
+                            <div class="grant-organisme">${grant.organisme}</div>
                         </div>
-                        <div class="grant-raison">${grant.raison}</div>
-                        <div class="grant-infos">
-                            <span>💰 ${grant.montant_min.toLocaleString()}€ - ${grant.montant_max.toLocaleString()}€</span>
-                            <span>📅 ${grant.deadline}</span>
-                        </div>
-                        <a href="${grant.url}" target="_blank" class="grant-link">
-                            → Voir le financement
-                        </a>
+                        <div class="score ${scoreClass}">${grant.score}% match</div>
                     </div>
-                `;
-            });
-        }
-    </script>
+                    <div class="grant-raison">${grant.raison}</div>
+                    <div class="grant-infos">
+                        <span>💰 ${grant.montant_min.toLocaleString()}€ - ${grant.montant_max.toLocaleString()}€</span>
+                        <span>📅 ${grant.deadline}</span>
+                    </div>
+                    <a href="${grant.url}" target="_blank" class="grant-link">
+                        → Voir le financement
+                    </a>
+                </div>
+            `;
+        });
+
+    } catch(erreur) {
+        document.getElementById('loading-overlay').style.display = 'none';
+        alert("Erreur lors du matching. Réessaie !");
+    }
+}
 </body>
 </html>
