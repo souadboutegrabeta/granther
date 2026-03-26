@@ -4,279 +4,501 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GrantHer — Trouvez vos financements</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+ 
+        :root {
+            --violet: #7a2df5;
+            --violet-dark: #310e88;
+            --violet-mid: #6218c2;
+            --or: #f5c842;
+            --rose: #c2185b;
+            --bg: #fdf5f9;
+            --white: #ffffff;
+            --text: #2a2a2a;
+            --muted: #777;
+            --border: #eee;
+        }
+ 
         body {
-            font-family: 'Arial', sans-serif;
-            background: #fdf5f9;
-            color: #333;
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
         }
-
+ 
+        /* ── HEADER ── */
         header {
-            background: linear-gradient(135deg, #7a2df5, #310e88);
+            background: linear-gradient(135deg, var(--violet), var(--violet-dark));
             color: white;
-            padding: 40px 20px;
+            padding: 56px 20px 48px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
-
+ 
+        header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 70% 50%, rgba(245,200,66,0.12) 0%, transparent 60%),
+                        radial-gradient(ellipse at 20% 80%, rgba(194,24,91,0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+ 
         header h1 {
-            font-size: 2.5em;
-            margin-bottom: 8px;
+            font-family: 'DM Serif Display', serif;
+            font-size: 3em;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+            position: relative;
         }
-
+ 
+        header h1 span {
+            color: var(--or);
+        }
+ 
         header p {
             font-size: 1.1em;
-            opacity: 0.9;
+            opacity: 0.88;
+            max-width: 520px;
+            margin: 0 auto;
+            line-height: 1.6;
+            position: relative;
         }
-
+ 
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            font-size: 0.78em;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            position: relative;
+        }
+ 
+        /* ── CONTAINER ── */
         .container {
-            max-width: 800px;
-            margin: 40px auto;
+            max-width: 820px;
+            margin: 48px auto;
             padding: 0 20px;
         }
-
+ 
+        /* ── FORMULAIRE ── */
         .formulaire {
-            background: white;
-            border-radius: 16px;
-            padding: 32px;
-            box-shadow: 0 4px 20px rgba(194,24,91,0.1);
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(122,45,245,0.1);
             margin-bottom: 40px;
+            border: 1px solid rgba(122,45,245,0.08);
         }
-
+ 
         .formulaire h2 {
-            color: #7427e0;
-            margin-bottom: 24px;
-            font-size: 1.3em;
+            font-family: 'DM Serif Display', serif;
+            color: var(--violet-mid);
+            margin-bottom: 8px;
+            font-size: 1.5em;
         }
-
+ 
+        .formulaire .sous-titre {
+            color: var(--muted);
+            font-size: 0.92em;
+            margin-bottom: 28px;
+        }
+ 
         .champ {
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
-
+ 
         .champ label {
             display: block;
-            font-weight: bold;
+            font-weight: 600;
             margin-bottom: 8px;
-            color: #555;
+            color: #444;
+            font-size: 0.92em;
         }
-
-        .champ input, .champ textarea, .champ select {
+ 
+        .champ label .hint {
+            font-weight: 400;
+            color: var(--muted);
+            font-size: 0.9em;
+            margin-left: 4px;
+        }
+ 
+        .champ input,
+        .champ textarea,
+        .champ select {
             width: 100%;
-            padding: 12px 16px;
-            border: 2px solid #eee;
-            border-radius: 8px;
-            font-size: 1em;
+            padding: 13px 16px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            font-size: 0.97em;
+            font-family: 'DM Sans', sans-serif;
             outline: none;
-            transition: border-color 0.2s;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            color: var(--text);
+            background: #fafafa;
         }
-
-        .champ input:focus, .champ textarea:focus, .champ select:focus {
-            border-color: #8718c2;
+ 
+        .champ input:focus,
+        .champ textarea:focus,
+        .champ select:focus {
+            border-color: var(--violet);
+            box-shadow: 0 0 0 3px rgba(122,45,245,0.1);
+            background: white;
         }
-
+ 
         .champ textarea {
             height: 100px;
             resize: vertical;
+            line-height: 1.5;
         }
-
+ 
+        .champ select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 40px;
+        }
+ 
+        .row-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+ 
+        @media (max-width: 560px) {
+            .row-2 { grid-template-columns: 1fr; }
+            .formulaire { padding: 24px; }
+            header h1 { font-size: 2.2em; }
+        }
+ 
         .btn {
-            background: linear-gradient(135deg, #6a18c2, #490e88);
+            background: linear-gradient(135deg, var(--violet), var(--violet-dark));
             color: white;
             border: none;
-            padding: 16px 32px;
-            border-radius: 8px;
-            font-size: 1.1em;
+            padding: 17px 32px;
+            border-radius: 10px;
+            font-size: 1.05em;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
             cursor: pointer;
             width: 100%;
-            transition: opacity 0.2s;
+            transition: opacity 0.2s, transform 0.15s;
+            letter-spacing: 0.2px;
         }
-
-        .btn:hover { opacity: 0.9; }
-
-        .loading {
-            text-align: center;
-            padding: 40px;
-            color: #c2185b;
-            font-style: italic;
-            display: none;
+ 
+        .btn:hover {
+            opacity: 0.92;
+            transform: translateY(-1px);
         }
-
+ 
+        .btn:active {
+            transform: translateY(0);
+        }
+ 
+        /* ── RÉSULTATS ── */
         .resultats { display: none; }
-
+ 
         .resultats h2 {
-            color: #c2185b;
+            font-family: 'DM Serif Display', serif;
+            color: var(--rose);
             margin-bottom: 24px;
-            font-size: 1.3em;
+            font-size: 1.5em;
         }
-
+ 
         .grant-card {
             background: white;
             border-radius: 16px;
-            padding: 24px;
+            padding: 26px;
             margin-bottom: 16px;
-            box-shadow: 0 4px 20px rgba(194,24,91,0.08);
-            border-left: 4px solid #6718c2;
+            box-shadow: 0 4px 20px rgba(122,45,245,0.07);
+            border-left: 4px solid var(--violet-mid);
+            transition: box-shadow 0.2s, transform 0.2s;
         }
-
+ 
+        .grant-card:hover {
+            box-shadow: 0 8px 32px rgba(122,45,245,0.13);
+            transform: translateY(-2px);
+        }
+ 
         .grant-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             margin-bottom: 12px;
+            gap: 12px;
         }
-
+ 
         .grant-titre {
-            font-weight: bold;
-            font-size: 1.1em;
-            color: #333;
+            font-weight: 700;
+            font-size: 1.05em;
+            color: var(--text);
         }
-
+ 
         .grant-organisme {
-            color: #888;
-            font-size: 0.9em;
+            color: var(--muted);
+            font-size: 0.88em;
             margin-top: 4px;
         }
-
+ 
         .score {
-            background: #6218c2;
+            background: var(--violet-mid);
             color: white;
-            padding: 8px 16px;
+            padding: 7px 14px;
             border-radius: 24px;
-            font-weight: bold;
-            font-size: 1.1em;
+            font-weight: 700;
+            font-size: 0.95em;
             white-space: nowrap;
+            flex-shrink: 0;
         }
-
+ 
         .score.haut { background: #2e7d32; }
-        .score.moyen { background: #f57c00; }
+        .score.moyen { background: #e65100; }
         .score.bas { background: #c62828; }
-
+ 
         .grant-raison {
             color: #555;
-            font-size: 0.95em;
-            margin-bottom: 12px;
-            line-height: 1.5;
+            font-size: 0.93em;
+            margin-bottom: 14px;
+            line-height: 1.55;
         }
-
+ 
         .grant-infos {
             display: flex;
             gap: 16px;
             flex-wrap: wrap;
             font-size: 0.85em;
-            color: #777;
+            color: var(--muted);
         }
-
+ 
         .grant-infos span {
             display: flex;
             align-items: center;
             gap: 4px;
         }
-
+ 
         .grant-link {
             display: inline-block;
-            margin-top: 12px;
-            color: #c2185b;
+            margin-top: 14px;
+            color: var(--rose);
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
             font-size: 0.9em;
+            transition: color 0.2s;
         }
-
-        .grant-link:hover { text-decoration: underline; }
-    #loading-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(74, 20, 140, 0.93);
-  z-index: 9999;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  padding: 20px;
-}
+ 
+        .grant-link:hover {
+            color: var(--violet);
+            text-decoration: underline;
+        }
+ 
+        /* ── LOADING OVERLAY ── */
+        #loading-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(49, 14, 136, 0.95);
+            z-index: 9999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+ 
+        #loading-overlay .pulse {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+ 
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.15); opacity: 0.8; }
+        }
+ 
+        /* ── FOOTER ── */
+        footer {
+            text-align: center;
+            padding: 32px 20px;
+            color: var(--muted);
+            font-size: 0.85em;
+            border-top: 1px solid var(--border);
+            margin-top: 48px;
+        }
+ 
+        footer a {
+            color: var(--violet);
+            text-decoration: none;
+            font-weight: 600;
+        }
+ 
+        footer a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
-    
-    </div>
-<script>
-async function lancerMatching() {
-    const nom = document.getElementById("nom").value;
-    const mission = document.getElementById("mission").value;
-    const activites = document.getElementById("activites").value;
-    const zone = document.getElementById("zone").value;
-    const budget = document.getElementById("budget").value;
-
-    if (!nom || !mission) {
-        alert("Merci de remplir au moins le nom et la mission de votre association.");
-        return;
-    }
-
-    document.getElementById('loading-overlay').style.display = 'flex';
-
-    const profil = {
-        nom: nom,
-        mission: mission,
-        activites: activites.split(",").map(a => a.trim()),
-        zone: zone,
-        budget_annuel: budget
-    };
-
-    try {
-        const reponse = await fetch("/matching", {
-            method: "POST",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify(profil)
-        });
-
-        const grants = await reponse.json();
-
-        document.getElementById('loading-overlay').style.display = 'none';
-        document.getElementById("loading").style.display = "none";
-        document.getElementById("resultats").style.display = "block";
-        document.getElementById("titre-resultats").textContent = 
-            `🎉 ${grants.length} financements trouvés pour ${nom} !`;
-
-        const liste = document.getElementById("liste-grants");
-        liste.innerHTML = "";
-
-        grants.forEach(grant => {
-            const scoreClass = grant.score >= 80 ? "haut" : grant.score >= 60 ? "moyen" : "bas";
-            liste.innerHTML += `
-                <div class="grant-card">
-                    <div class="grant-header">
-                        <div>
-                            <div class="grant-titre">${grant.nom}</div>
-                            <div class="grant-organisme">${grant.organisme}</div>
-                        </div>
-                        <div class="score ${scoreClass}">${grant.score}% match</div>
-                    </div>
-                    <div class="grant-raison">${grant.raison}</div>
-                    <div class="grant-infos">
-                        <span>💰 ${grant.montant_min.toLocaleString()}€ - ${grant.montant_max.toLocaleString()}€</span>
-                        <span>📅 ${grant.deadline}</span>
-                    </div>
-                    <a href="${grant.url}" target="_blank" class="grant-link">
-                        → Voir le financement
-                    </a>
+ 
+    <header>
+        <div class="badge">✨ Outil gratuit pour les associations féministes</div>
+        <h1>Grant<span>Her</span></h1>
+        <p>Trouvez les financements adaptés à votre association grâce à l'intelligence artificielle</p>
+    </header>
+ 
+    <div class="container">
+ 
+        <!-- FORMULAIRE -->
+        <div class="formulaire">
+            <h2>Profil de votre association</h2>
+            <p class="sous-titre">Remplissez ces informations pour que l'IA trouve les grants les plus pertinents pour vous.</p>
+ 
+            <div class="champ">
+                <label for="nom">Nom de l'association <span class="hint">*</span></label>
+                <input type="text" id="nom" placeholder="Ex : Les Femmes du Futur" />
+            </div>
+ 
+            <div class="champ">
+                <label for="mission">Mission et objectifs <span class="hint">* décrivez ce que vous faites</span></label>
+                <textarea id="mission" placeholder="Ex : Nous accompagnons les femmes victimes de violences conjugales vers l'autonomie économique et professionnelle..."></textarea>
+            </div>
+ 
+            <div class="champ">
+                <label for="activites">Activités principales <span class="hint">séparées par des virgules</span></label>
+                <input type="text" id="activites" placeholder="Ex : formation, hébergement d'urgence, mentorat, sensibilisation" />
+            </div>
+ 
+            <div class="row-2">
+                <div class="champ">
+                    <label for="zone">Zone géographique</label>
+                    <select id="zone">
+                        <option value="">— Sélectionner —</option>
+                        <option value="locale">Locale (ville / commune)</option>
+                        <option value="regionale">Régionale</option>
+                        <option value="nationale">Nationale (France)</option>
+                        <option value="europeenne">Européenne</option>
+                        <option value="internationale">Internationale</option>
+                    </select>
                 </div>
-            `;
-        });
-
-    } catch(erreur) {
-        document.getElementById('loading-overlay').style.display = 'none';
-        alert("Erreur lors du matching. Réessaie !");
+ 
+                <div class="champ">
+                    <label for="budget">Budget annuel approximatif</label>
+                    <select id="budget">
+                        <option value="">— Sélectionner —</option>
+                        <option value="moins_50k">Moins de 50 000 €</option>
+                        <option value="50k_200k">50 000 € – 200 000 €</option>
+                        <option value="200k_500k">200 000 € – 500 000 €</option>
+                        <option value="plus_500k">Plus de 500 000 €</option>
+                    </select>
+                </div>
+            </div>
+ 
+            <button class="btn" onclick="lancerMatching()">
+                🔍 Trouver mes financements
+            </button>
+        </div>
+ 
+        <!-- RÉSULTATS -->
+        <div class="resultats" id="resultats">
+            <h2 id="titre-resultats"></h2>
+            <div id="liste-grants"></div>
+        </div>
+ 
+    </div>
+ 
+    <footer>
+        Fait avec 💜 par <a href="https://souadboutegrabet.com" target="_blank">Souad Boutegrabet</a> &nbsp;·&nbsp;
+        <a href="https://descodeuses.org" target="_blank">DesCodeuses</a> &nbsp;·&nbsp;
+        Outil gratuit, open source
+    </footer>
+ 
+    <!-- LOADING OVERLAY -->
+    <div id="loading-overlay">
+        <div class="pulse">💜</div>
+        <h2 style="font-family:'DM Serif Display',serif;font-size:2rem;font-weight:normal;margin-bottom:1rem;">Recherche en cours...</h2>
+        <p style="font-size:1.1rem;opacity:0.88;line-height:1.7;">L'IA analyse votre profil<br>et cherche les meilleurs grants<br>dans le monde entier ✨</p>
+        <p style="font-size:0.9rem;opacity:0.55;margin-top:1.5rem;">⏳ Cela prend 10 à 20 secondes</p>
+    </div>
+ 
+    <script>
+    async function lancerMatching() {
+        const nom = document.getElementById("nom").value;
+        const mission = document.getElementById("mission").value;
+        const activites = document.getElementById("activites").value;
+        const zone = document.getElementById("zone").value;
+        const budget = document.getElementById("budget").value;
+ 
+        if (!nom || !mission) {
+            alert("Merci de remplir au moins le nom et la mission de votre association.");
+            return;
+        }
+ 
+        document.getElementById('loading-overlay').style.display = 'flex';
+ 
+        const profil = {
+            nom: nom,
+            mission: mission,
+            activites: activites.split(",").map(a => a.trim()),
+            zone: zone,
+            budget_annuel: budget
+        };
+ 
+        try {
+            const reponse = await fetch("/matching", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(profil)
+            });
+ 
+            const grants = await reponse.json();
+ 
+            document.getElementById('loading-overlay').style.display = 'none';
+            document.getElementById("loading").style.display = "none";
+            document.getElementById("resultats").style.display = "block";
+            document.getElementById("titre-resultats").textContent =
+                `🎉 ${grants.length} financements trouvés pour ${nom} !`;
+ 
+            const liste = document.getElementById("liste-grants");
+            liste.innerHTML = "";
+ 
+            grants.forEach(grant => {
+                const scoreClass = grant.score >= 80 ? "haut" : grant.score >= 60 ? "moyen" : "bas";
+                liste.innerHTML += `
+                    <div class="grant-card">
+                        <div class="grant-header">
+                            <div>
+                                <div class="grant-titre">${grant.nom}</div>
+                                <div class="grant-organisme">${grant.organisme}</div>
+                            </div>
+                            <div class="score ${scoreClass}">${grant.score}% match</div>
+                        </div>
+                        <div class="grant-raison">${grant.raison}</div>
+                        <div class="grant-infos">
+                            <span>💰 ${grant.montant_min.toLocaleString()}€ – ${grant.montant_max.toLocaleString()}€</span>
+                            <span>📅 ${grant.deadline}</span>
+                        </div>
+                        <a href="${grant.url}" target="_blank" class="grant-link">
+                            → Voir le financement
+                        </a>
+                    </div>
+                `;
+            });
+ 
+        } catch(erreur) {
+            document.getElementById('loading-overlay').style.display = 'none';
+            alert("Erreur lors du matching. Réessaie !");
+        }
     }
-}
-</script>
-
-<div id="loading-overlay" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(74,20,140,0.93);z-index:99999;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:white;padding:20px;">
-  <div style="font-size:4rem;margin-bottom:1.5rem;">💜</div>
-  <h2 style="font-size:2rem;font-weight:bold;margin-bottom:1rem;">Recherche en cours...</h2>
-  <p style="font-size:1.2rem;opacity:0.9;line-height:1.6;">L'IA analyse votre profil<br>et cherche les meilleurs grants<br>dans le monde entier ✨</p>
-  <p style="font-size:0.95rem;opacity:0.6;margin-top:1.5rem;">⏳ Cela prend 10 à 20 secondes</p>
-</div>
+    </script>
+ 
 </body>
 </html>
+ 
